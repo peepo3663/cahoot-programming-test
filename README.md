@@ -1,6 +1,21 @@
-# CahootInterviewProject
+# Cahoot Interview Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+This project is for cahoot Software Developer Test - interview
+
+## Assumptions
+
+This code is based on the backend (NodeJS) with already setup SQL Server and imported StackOverFlow data as [described here](https://sqlblog.org/2020/03/15/attaching-restoring-databases-inside-a-container) and [here](https://www.sentryone.com/blog/aaronbertrand/vs-code-mac-sql-linux-docker)
+* Already setup SQL Server with StackOverflow database (Running on the localhost port 1433)
+* Used default SA user with setup password (In my case, password is `#myPassword123`)
+* SQL Query answers is in the project as SQL files.
+
+## Features
+* search posts and return results like StackOverflow.com search results page
+* Implement a simple site search to allow the users to search posts (questions and answers)
+* present the most relevant results, 10 results per page
+* This page should support progressive loading
+* Each result should display the Post Title, maximum of 140 characters from the Description, Total # of Votes, Total # of Answers and the User who asked the question along with their reputation score and badges
 
 ## Development server
 
