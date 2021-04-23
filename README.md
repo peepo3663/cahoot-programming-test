@@ -17,6 +17,9 @@ This code is based on the backend (NodeJS) with already setup SQL Server and imp
 * This page should support progressive loading
 * Each result should display the Post Title, maximum of 140 characters from the Description, Total # of Votes, Total # of Answers and the User who asked the question along with their reputation score and badges
 
+## SQL Querys
+* Answers to the SQL Querys (Number 2,3) are in [this file](Query_Cahoot.sql)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
