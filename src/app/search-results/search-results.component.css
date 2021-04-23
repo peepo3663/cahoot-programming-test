@@ -1,0 +1,44 @@
+.vote {
+  width: 60px;
+  text-align: center;
+  padding: 7px 0 5px;
+  border: gray 1px dashed;
+  border-radius: 3px;
+  margin-right: 3px;
+}
+
+.votes_count {
+  font-size: 20px;
+  color: gray;
+}
+
+.answer {
+  color: #fff;
+  padding: 7px 0 5px;
+  border-radius: 3px;
+  background-color: green;
+  text-align: center;
+  width: 60px;
+}
+
+.answers_count {
+  font-size: 20px;
+}
+
+.stats_container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.content {
+  padding: 8px;
+}
+
+.content > .stackOverflow-card {
+  width: 320px;
+}
+
+.card-content {
+  overflow: hidden;
+}

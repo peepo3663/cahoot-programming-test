@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var initModels = require("./models/init-models");
 var Sequelize = require('sequelize');
+let cors = require('cors');
 
 var app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 // setup database connection
 const sequelize = new Sequelize('StackOverflow', 'sa', '#myPass123', {
@@ -32,7 +34,7 @@ sequelize.authenticate().then(() => {
 })
 
 let models = initModels(sequelize)
-let apiRouter = require('./routes/api')(models)
+let apiRouter = require('./routes/api')(models, sequelize)
 app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
