@@ -22,7 +22,22 @@ This code is based on the backend (NodeJS) with already setup SQL Server and imp
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Install all dependencies in all Frontend (Angular) and Backend by calling 
+```shell
+npm install
+```
+in both this directory and server directory
+* Install global dependency call [forever](https://www.npmjs.org/package/forever), so this will run server backend in the background.
+```
+npm install -g forever
+```
+* or you can run server and frontend separately. 
+* Run 
+```
+npm start 
+```
+This will run both server and frontend.
+* Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

@@ -24,7 +24,13 @@ app.use(cors())
 const sequelize = new Sequelize('StackOverflow', 'sa', '#myPass123', {
   host: 'localhost',
   dialect: 'mssql',
-  port: 1433
+  port: 1433,
+  dialectOptions: { connectTimeout: 30000 },
+  pool: {
+    max: 10,
+    min: 0,
+    idle: 10000
+  }
 })
 
 sequelize.authenticate().then(() => {
