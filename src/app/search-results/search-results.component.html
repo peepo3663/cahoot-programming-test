@@ -1,0 +1,35 @@
+<div class="content" *ngIf="dataSource != null && dataSource.length > 0">
+  <div fxLayout="row wrap" fxLayoutGap="8px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let data of dataSource">
+      <mat-card class="mat-elevation-z8 stackOverflow-card">
+        <mat-card-header>
+          <mat-card-title>{{data.Title || "StackOverflow Post"}}</mat-card-title>
+          <mat-card-subtitle>
+            {{data.ownerName || "StackOverflow Post"}}
+            <strong>Reputation: {{data.ownerReputation}}</strong>
+            <mat-chip-list
+              *ngIf="data.badgesName != null">
+              <mat-chip *ngFor="let badge of data.badgesName.split(',')" color="accent">{{badge}}</mat-chip>
+            </mat-chip-list>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content [innerHTML]="data.Body" class="card-content"></mat-card-content>
+        <mat-card-footer class="stats_container">
+          <div class="vote">
+            <span class="votes_count">{{data.votesCount}}</span>
+            <div>votes</div>
+          </div>
+          <div class="answer">
+            <span class="answers_count">{{data.AnswerCount}}</span>
+            <div>answers</div>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+  <mat-paginator *ngIf="dataLength > 0" #paginator
+                 [length]="dataLength"
+                 [pageIndex]="pageIndex"
+                 [pageSize]="DEFAULT_PAGE_SIZE" (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

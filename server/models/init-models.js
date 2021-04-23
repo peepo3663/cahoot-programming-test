@@ -20,6 +20,16 @@ function initModels(sequelize) {
   var VoteTypes = _VoteTypes(sequelize, DataTypes);
   var Votes = _Votes(sequelize, DataTypes);
 
+  // relations
+  Posts.belongsTo(Users, {
+    as: 'Owner',
+    foreignKey: 'OwnerUserId'
+  })
+  Posts.belongsTo(PostTypes, {
+    as: 'PostType',
+    foreignKey: 'PostTypeId'
+  })
+
 
   return {
     Badges,
