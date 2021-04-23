@@ -20,4 +20,12 @@ export class ApiService {
       return error;
     }));
   }
+
+  getPostsCount(): Observable<any> {
+    return this.httpClient.get<any>(`${environment.apiUrl}/api/posts/count`).pipe(map(res => {
+      return res;
+    }, error => {
+      return error;
+    }));
+  }
 }

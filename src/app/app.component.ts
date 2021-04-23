@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {ApiService} from './api.service';
 import {Subscription} from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-root',
@@ -47,6 +49,8 @@ export class AppComponent {
       this.error = error;
       this.searchResults = null;
       this.request = null;
+      this.currentPage = 0;
+      alert(error || 'Error, Can not fetch data.');
     });
   }
 
@@ -61,6 +65,12 @@ export class AppComponent {
       this.request.unsubscribe();
       this.request = null;
     }
+    this.currentPage = 0;
+    this.startSearch();
+  }
+
+  onPageChanged($event: PageEvent): void {
+    this.currentPage += 1;
     this.startSearch();
   }
 }

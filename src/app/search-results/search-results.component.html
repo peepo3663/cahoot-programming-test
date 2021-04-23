@@ -27,9 +27,9 @@
       </mat-card>
     </div>
   </div>
-  <mat-paginator #paginator
-                 [length]="dataSource.length"
+  <mat-paginator *ngIf="dataLength > 0" #paginator
+                 [length]="dataLength"
                  [pageIndex]="pageIndex"
-                 [pageSize]="DEFAULT_PAGE_SIZE">
+                 [pageSize]="DEFAULT_PAGE_SIZE" (page)="onPageChange($event)">
   </mat-paginator>
 </div>

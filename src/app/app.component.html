@@ -14,7 +14,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-progress-bar mode="indeterminate" *ngIf="isLoading" color="accent"></mat-progress-bar>
-<app-search-results *ngIf="searchResults && searchResults.length > 0" [dataSource]="searchResults" [pageIndex]="currentPage"></app-search-results>
+<app-search-results *ngIf="searchResults && searchResults.length > 0" [dataSource]="searchResults" [pageIndex]="currentPage" (pageChange)="onPageChanged($event)"></app-search-results>
 
 <ng-template #default_header>
   <span>{{title}}</span>

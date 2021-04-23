@@ -24,5 +24,15 @@ FROM USER_POSTS`
     })
   })
 
+  router.get('/posts/count', (req, res, next) => {
+    models.Posts.count({
+      col: 'Id'
+    }).then(count => {
+      return res.status(200).json({postCounts: count})
+    }).catch(error => {
+      return res.status(500).json(error)
+    })
+  })
+
   return router
 };
